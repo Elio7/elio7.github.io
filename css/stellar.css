@@ -1,0 +1,358 @@
+:root {
+    --white: rgb(255,255,255);
+    --black: rgb(0,0,0);
+    --yellow: rgb(255,187,0);
+    --purple: rgb(39,22,68);
+
+    --gutter: 3rem;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 10px;
+}
+
+body {
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    background-color: var(--purple);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#header {
+    overflow: hidden;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.header {
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+ul > li {
+    list-style: none;
+    padding: 2rem;
+    font-weight: bold;
+}
+
+ul > li > a {
+    position: relative;
+    color: var(--yellow);
+    text-decoration: none;
+}
+
+ul > li > a:hover {
+    color: var(--white);
+}
+
+ul > li > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 3rem;
+    left: 0;
+    background-color: var(--yellow);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+ul > li > a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/* BANNER SECTION */
+
+.banner {
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bannerText {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-right: 7rem;
+}
+
+.bgImage {
+    width: 100%;
+    height: 70rem;
+    background-image: url(images/Group\ 24.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+/* ABOUT US SECTION */
+
+.about {
+    background-color: var(--purple);
+    padding-top: 2rem;
+    padding-bottom: 5.5rem;
+    color: var(--white);
+}
+
+.aboutIcon {
+    justify-content: center;
+    padding: 3rem;
+}
+
+.aboutText {
+    width: 80%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    font-size: 2rem;
+    border-top: .45rem solid;
+    border-bottom: .45rem solid;
+}
+
+.aboutText p {
+    padding: 1rem;
+}
+
+
+/* SERVICES SECTION */
+.services {
+    background-color: var(--yellow);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+figcaption {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: solid .3rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.list {
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.service {
+    padding: 2rem;
+}
+
+.service p {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+}
+
+
+/* PORTFOLIO SECTION */
+.portfolio{
+    padding-top: 4rem;
+}
+
+.images{
+    justify-content: space-evenly;
+    padding-bottom: 4rem;
+}
+
+.images div {
+    cursor: pointer;
+}
+
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hiden;
+    transition: .64s ease-in-out;
+  }
+  .popup-inner {
+    position: relative;
+    bottom: -100vw;
+    right: -100vh;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    max-height: 600px;
+    width: 60%;
+    height: 80%;
+    background-color: #fff;
+    transform: rotate(32deg);
+    transition: .64s ease-in-out;
+  }
+  .popupphoto {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .popupphoto img {
+    width: auto;
+    height: 100%;
+  }
+  .popuptext {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    width: 60%;
+    height: 100%;
+    padding: 4rem;
+    overflow-y: scroll;
+  }
+  .popuptext h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #0A0A0A;
+  }
+  .popuptext p {
+    font-size: 1.5rem;
+    color: #686868;
+    line-height: 1.5;
+    padding-bottom: 1.5rem;
+  }
+  
+  .popuptext a {
+      text-decoration: none;
+      color:  #47BDFF;
+  }
+  .popup:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  .popup:target .popup-inner {
+    bottom: 0;
+    right: 0;
+    transform: rotate(0);
+  }
+  .closepopup {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: .875rem;
+    font-weight: 300;
+    border-radius: 100%;
+    background-color: var(--yellow);
+    z-index: 4;
+    color: #fff;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+
+/* FOOTER SECTION */
+.footer {
+    background-color: var(--purple);
+    color: var(--white);
+    padding-top: 5rem;
+}
+
+.address {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+div i {
+    padding: 2rem;
+    font-size: 1.5rem;
+}
+
+.copyright {
+    background-color: var(--yellow);
+    color: var(--black);
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.back-to-top {
+    position: fixed;
+    background: #2778b6;
+    color: #121518;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 22px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index: 20;
+}
+
+.back-to-top:hover {
+    color: #2778b6;
+    background: #121518;
+}
+
+.back-to-top i {
+    padding-top: 10px;
+}
+
+.rotate {
+    rotate: 90deg;
+}
