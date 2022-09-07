@@ -118,6 +118,7 @@ ul > li > a:hover:before {
     font-size: 2rem;
     line-height: 3rem;
     padding-right: 7rem;
+    padding-bottom: 8rem;
 }
 
 .bgImage {
@@ -259,6 +260,13 @@ figcaption {
   .popuptext h3 {
     font-size: 2rem;
     font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #0A0A0A;
+  }
+  .popuptext h4 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     text-transform: uppercase;
     color: #0A0A0A;
