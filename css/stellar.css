@@ -110,6 +110,7 @@ ul > li > a:hover:before {
 .banner {
     align-items: center;
     justify-content: space-evenly;
+    height: 55rem;
 }
 
 .bannerText {
@@ -117,8 +118,8 @@ ul > li > a:hover:before {
     font-weight: bold;
     font-size: 2rem;
     line-height: 3rem;
-    padding-right: 7rem;
-    padding-bottom: 45rem;
+    padding-right: 4rem;
+    padding-bottom: 35rem;
 }
 
 .bgImage {
